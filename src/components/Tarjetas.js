@@ -4,7 +4,7 @@ import visaLogo from "../assets/images/visa.png"
 function CreditCard(props){
     return(
 <div>
-    <div className="card--logo" ></div>
+    <div className="card__logo" ></div>
     <img src={visaLogo} />
     <div>{props.number}</div>
     <div>

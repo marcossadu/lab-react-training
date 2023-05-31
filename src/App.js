@@ -5,6 +5,8 @@ import Greetings from './components/Greetings';
 import Random from './components/Random';
 import BoxColor from './components/BoxColor';
 import CreditCard from './components/Tarjetas';
+import ButtonLikes from './components/BotonLikes';
+import Facebook  from './components/Facebook';
 
 
 function App() {
@@ -34,7 +36,7 @@ function App() {
         <Greetings lang="rus" > kag dila?</Greetings>
         <BoxColor></BoxColor>
         <CreditCard
-  type="Visa"
+        type="Visa"
   number="0123456789018845"
   expirationMonth={3}
   expirationYear={2021}
@@ -42,7 +44,9 @@ function App() {
   owner="Maxence Bouret"
   bgColor="#11aa99"
   color="white" 
-/>
+        />
+  
+
 <CreditCard
   type="Master Card"
   number="0123456789010995"
@@ -63,9 +67,12 @@ function App() {
   bgColor="#ddbb55"
   color="white" 
 />
+<ButtonLikes></ButtonLikes>
+<ButtonLikes></ButtonLikes>
+<ButtonLikes></ButtonLikes> 
 
       </div>
-
+      <Facebook></Facebook>
 
     </div>
   );

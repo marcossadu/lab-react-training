@@ -1,4 +1,8 @@
-.card--logo{
+.card__logo{
+
+    width: 20px;
+ display:flex
+
 
 
 }
