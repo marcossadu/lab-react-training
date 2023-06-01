@@ -6,7 +6,7 @@ import Random from './components/Random';
 import BoxColor from './components/BoxColor';
 import CreditCard from './components/Tarjetas';
 import ButtonLikes from './components/BotonLikes';
-import Facebook  from './components/Facebook';
+import Facebook from './components/Facebook';
 
 
 function App() {
@@ -73,6 +73,7 @@ function App() {
 
       </div>
       <Facebook></Facebook>
+      <SignUpPage></SignUpPage>
 
     </div>
   );

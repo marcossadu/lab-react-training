@@ -1,38 +1,68 @@
-import profiles from '../data/berlin.json'
+// En la variable profiles cargamos un array de objetos, pues son los datos que estan contenidos en berlin.json
 
-export default function List(){
-const listItems = profiles.map((person,key) =>
+import profiles from '../data/berlin.json';
+import './facebook.css';
+import { useState } from 'react';
+// 1. Transformar el array de profiles a un array de solo paises
+// 2. Como hago para eliminar los repetidos de un array?
+// 3. Console.log con el array final a ver si de verdad estan solo paises y no hay repetidos
+
+const initialCountryList = profiles.map((profile) => profile.country);
+
+const countryList = initialCountryList.filter(
+  (item, index) => initialCountryList.indexOf(item) === index
+);
+
+console.log(countryList);
+
+export default function FaceBook() {
+  
+  const [selectedCountry, setSelectedCountry] = useState("")
+
+  const buttons = (
+    <div>
+      {' '}
+      {countryList.map((country) => (
+        <button style={{
+          backgroundColor:country.includes(selectedCountry) ? "turquoise":""}} onClick={handleClickCountry}>{country}</button>
+      ))}{' '}
+    </div>
+  );
+
+  function handleClickCountry(e) {
+    console.log(e.target.textContent)
+setSelectedCountry(e.target.textContent)
+
+
+  }
+  const listProfiles = profiles.map((profile) => (
     
-    <li key={key} >
-      <img
-        src={person.img}
-        alt={person.name}
-      />
-      <p>
-        <b>{person.firstName} {person.lastName} 
-        <p>is from {person.country}</p> 
-        <p>Hace algo con su vida?  {person.isStudent ? "Estudia":"No estudia es un vago"}</p></b>
-        
-        
-      </p>
+    <li style={{
+      backgroundColor: profile.country.includes(selectedCountry) ? "turquoise":""
+    }}>
+      <div  className="img-container">
+        <img src={profile.img} alt={profile.firstName} />
+      </div>
+      <div className="profile-details">
+        <p>
+          <strong>First Name:</strong> {profile.firstName}
+        </p>
+        <p>
+          <strong>Last Name:</strong> {profile.lastName}
+        </p>
+        <p>
+          <strong>Country:</strong> {profile.country}
+        </p>
+        <p>
+          <strong>Type:</strong> {profile.isStudent ? 'Student' : 'Teacher'}
+        </p>
+      </div>
     </li>
-
-
-
-);return <ul>{listItems}</ul>;
- 
-
-
+  ));
+  return (
+    <div>
+      <div className="facebook__buttons">{buttons}</div>
+      <ul> {listProfiles} </ul>
+    </div>
+  );
 }
- 
-
- const listaCountrys = profiles.map(p => (p.country))
-
-  const noreps = listaCountrys.filter((valor, índice) => {
-
-    return listaCountrys.indexOf(valor)===índice
- });
-
-    
- 
-console.log(noreps)
