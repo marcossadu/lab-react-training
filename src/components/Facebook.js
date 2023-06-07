@@ -21,17 +21,17 @@ export default function FaceBook() {
 
   const buttons = (
     <div>
-      {' '}
+      
       {countryList.map((country) => (
         <button style={{
           backgroundColor:country.includes(selectedCountry) ? "turquoise":""}} onClick={handleClickCountry}>{country}</button>
-      ))}{' '}
+      ))}
     </div>
   );
 
   function handleClickCountry(e) {
-    console.log(e.target.textContent)
-setSelectedCountry(e.target.textContent)
+    console.log(e.target.value)
+setSelectedCountry(e.target.value)
 
 
   }

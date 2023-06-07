@@ -7,12 +7,13 @@ import BoxColor from './components/BoxColor';
 import CreditCard from './components/Tarjetas';
 import ButtonLikes from './components/BotonLikes';
 import Facebook from './components/Facebook';
+import  RGBColorPicker from './components/RGBColorPicker';
 
 
 function App() {
   return (
     <div className="App">
-      <Idcard
+      {/* <Idcard
         lastName='Doe'
         firstName='John'
         gender='male'
@@ -72,8 +73,11 @@ function App() {
 <ButtonLikes></ButtonLikes> 
 
       </div>
-      <Facebook></Facebook>
-      <SignUpPage></SignUpPage>
+      <Facebook></Facebook> */}
+      
+      <RGBColorPicker></RGBColorPicker>
+      
+      
 
     </div>
   );
